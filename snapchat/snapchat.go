@@ -21,8 +21,8 @@ const staticToken = "m198sOkJEn37DjqZ32lpRu76xmw288xSQ9"
 const userAgent = "Snapchat/8.1.0.11 (iPhone5,2; iOS 8.1; gzip)"
 const blobEncryptionKey = "M02cnQ51Ji97vwT4"
 
-func Prep() ([]byte, error) {
-	imageData, err := ioutil.ReadFile("./baelor'd.jpg")
+func Prep(filePath string) ([]byte, error) {
+	imageData, err := ioutil.ReadFile(filePath)
 	if err != nil {
 		return nil, err
 	}
