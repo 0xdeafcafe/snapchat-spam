@@ -8,7 +8,7 @@ $ go run .\app.go [snapchat-access-token] [victim-username] [your-username] [num
 
 For example:
 ```
-$ go run .\app.go 68925bb39093a89279762446df611f64 alexerax notshad 1000
+$ go run .\app.go 68925bb39093a89279762446df611f64 notalex notshad 1000
 ```
 
 It will pull in the jpg image specified in app.go as `BaePath` and sends it x number of times to the recepient 
