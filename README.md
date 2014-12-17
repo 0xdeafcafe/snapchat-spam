@@ -2,10 +2,14 @@ snapchat-spam
 ===
 
 Fucking advanced app written in go. Call it like so:
-> $ go run .\app.go [snapchat-access-token] [victim-username] [your-username] [number-of-snaps-to-send]
+```
+$ go run .\app.go [snapchat-access-token] [victim-username] [your-username] [number-of-snaps-to-send]
+```
 
 For example:
-> $ go run .\app.go 68925bb39093a89279762446df611f64 alexerax notshad 1000
+```
+$ go run .\app.go 68925bb39093a89279762446df611f64 alexerax notshad 1000
+```
 
 It will pull in the jpg image specified in app.go as `BaePath` and sends it x number of times to the recepient 
 you specified. Currently the specified jpg is broken and snapchat refuses to load it in the app, causing a 
