@@ -9,6 +9,10 @@ import (
 	"strconv"
 )
 
+const (
+	BaePath = "./baelor'd.jpg"
+)
+
 func GetArguments() (string, string, string, int, error) {
 	flag.Parse()
 
@@ -44,7 +48,7 @@ func main() {
 		return
 	}
 
-	data, err := snapchat.Prep()
+	data, err := snapchat.Prep(BaePath)
 	if err != nil {
 		fmt.Println(err)
 		return
