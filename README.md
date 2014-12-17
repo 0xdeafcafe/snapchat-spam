@@ -1,6 +1,5 @@
 snapchat-spam
 ===
----
 
 Fucking advanced app written in go. Call it like so:
 > $ go run .\app.go [snapchat-access-token] [victim-username] [your-username] [number-of-snaps-to-send]
