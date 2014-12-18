@@ -42,11 +42,13 @@ func GetArguments() (string, string, string, int, error) {
 }
 
 func main() {
-	token, usernameToSend, usernameToAbuse, count, err := GetArguments()
+	tokenString, usernameToSend, usernameToAbuse, count, err := GetArguments()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+
+	token := snapchat.Token(tokenString)
 
 	data, err := snapchat.Prep(BaePath)
 	if err != nil {
@@ -55,12 +57,13 @@ func main() {
 	}
 
 	for i := 0; i < count; i++ {
-		mediaId, _, err := snapchat.UploadMedia(token, data, usernameToSend)
+		mediaId, _, err := token.UploadMedia(data, usernameToSend)
 		if err != nil {
 			log.Fatal(err)
 		}
-		_, err = snapchat.SendMedia(token, usernameToAbuse, usernameToSend, mediaId)
-		if err != nil {
+
+		response, err := token.SendMedia(usernameToAbuse, usernameToSend, mediaId)
+		if err != nil || !response {
 			fmt.Println(fmt.Sprintf("[%d] - Error Sending Snap %s", i, usernameToAbuse))
 		} else {
 			fmt.Println(fmt.Sprintf("[%d] - Snap Sent to %s", i, usernameToAbuse))
