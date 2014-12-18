@@ -81,9 +81,6 @@ func (t Token) SendChatMedia(data []byte, username string, recipient string) (bo
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(resp.StatusCode)
-	bdy, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(bdy))
 	return (resp.StatusCode == http.StatusOK), nil
 }
 
