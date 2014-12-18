@@ -11,7 +11,7 @@ For example:
 $ go run .\app.go 68925bb39093a89279762446df611f64 notalex notshad 1000
 ```
 
-It will pull in the jpg image specified in app.go as `BaePath` and sends it x number of times to the recepient 
+It will pull in the jpg image specified in app.go as `BaePath` and send it x number of times to the recepient 
 you specified. Currently the specified jpg is broken and snapchat refuses to load it in the app, causing a 
 notification that you can't clear without clearing the entire conversation in settings. So backup those nudes 
 before you use it on your loved one.
