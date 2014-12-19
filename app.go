@@ -43,7 +43,7 @@ func getArguments() (string, string, string, int, error) {
 }
 
 func main() {
-	tokenString, usernameToSend, usernameToAbuse, count, err := GetArguments()
+	tokenString, usernameToSend, usernameToAbuse, count, err := getArguments()
 	if err != nil {
 		log.Fatal(err)
 	}
