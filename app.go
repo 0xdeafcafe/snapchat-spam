@@ -10,10 +10,11 @@ import (
 )
 
 const (
+	// Image path of the image of Taylor Swift (exclusive) we're using to spam.
 	BaePath = "./baelor'd.jpg"
 )
 
-func GetArguments() (string, string, string, int, error) {
+func getArguments() (string, string, string, int, error) {
 	flag.Parse()
 
 	token := flag.Arg(0)
@@ -23,19 +24,19 @@ func GetArguments() (string, string, string, int, error) {
 
 	counti, err := strconv.Atoi(count)
 	if err != nil {
-		return "", "", "", 0, errors.New("The number of times to spam someone needs to be a number..")
+		return "", "", "", 0, errors.New("the number of times to spam someone needs to be a number")
 	}
 	if token == "" {
-		return "", "", "", 0, errors.New("You need a token, son..")
+		return "", "", "", 0, errors.New("you need a token, son")
 	}
 	if usernameToSend == "" {
-		return "", "", "", 0, errors.New("You need a sender, dude..")
+		return "", "", "", 0, errors.New("you need a sender, dude")
 	}
 	if usernameToAbuse == "" {
-		return "", "", "", 0, errors.New("You need a victim, dude..")
+		return "", "", "", 0, errors.New("you need a victim, dude")
 	}
 	if counti == 0 {
-		return "", "", "", 0, errors.New("You need to specify the number of times to spam the vicim..")
+		return "", "", "", 0, errors.New("you need to specify the number of times to spam the vicim")
 	}
 
 	return token, usernameToSend, usernameToAbuse, counti, nil
@@ -54,12 +55,12 @@ func main() {
 
 	token := snapchat.Token(tokenString)
 	for i := 0; i < count; i++ {
-		mediaId, _, err := token.UploadMedia(data, usernameToSend)
+		mediaID, _, err := token.UploadMedia(data, usernameToSend)
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		response, err := token.SendMedia(usernameToAbuse, usernameToSend, mediaId)
+		response, err := token.SendMedia(usernameToAbuse, usernameToSend, mediaID)
 		if err != nil || !response {
 			fmt.Println(fmt.Sprintf("[%d] - Error Sending Snap to %s", i, usernameToAbuse))
 			log.Fatal(err)
