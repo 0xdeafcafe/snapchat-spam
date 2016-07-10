@@ -17,7 +17,7 @@ notification that you can't clear without clearing the entire conversation in se
 before you use it on your loved one.
 
 ### Getting your Snapchat AuthToken
-Close the app - force close it - attach a network insector to your phone (I recommend Charlex Proxy or Fiddler). 
+Close the app - force close it - attach a network insector to your phone (I recommend Charles Proxy or Fiddler). 
 Open the app on your phone and look at the request made to `https://feelinsonice-hrd.appspot.com/loq/all_update`, 
 in the json response, under `updates` there is a field labeled `auth_token`. Copy that and you're all gucci.
 
